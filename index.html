@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">
+        <span class="header__item color--red">Rock</span>
+        <span class="header__item color--purple">Paper</span>
+        <span class="header__item color--green">Scissors</span>
+      </h1>
+      <img src="images/separator.jpg" alt="separator" class="main__separator" />
+      <p class="header__rules">
+        <span class="header__item color--red">Rock</span> beats
+        <span class="header__item color--green">Scissors</span> |
+        <span class="header__item color--green">Scissors</span> beats
+        <span class="header__item color--purple">Paper</span> |
+        <span class="header__item color--purple">Paper</span> beats
+        <span class="header__item color--red">Rock</span>
+      </p>
+
+      <main class="main">
+        <div class="game-scores">
+          <p class="game-scores__rounds">Rounds: 0</p>
+          <p class="game-scores__user">User Score: 0</p>
+          <p class="game-scores__enemy">Enemy Score: 0</p>
+        </div>
+        <div class="choices">
+          <button class="choices__button choices__rock">Rock</button>
+          <button class="choices__button choices__paper">Paper</button>
+          <button class="choices__button choices__scissors">Scissors</button>
+        </div>
+        <div class="game-winner">
+          <p class="game-winner__text"></p>
+          <button class="game-winner__replay">Replay?</button>
+        </div>
+      </main>
+    </header>
+    <srcipt src="main.js"></srcipt>
+  </body>
+</html>
