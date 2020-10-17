@@ -1,4 +1,5 @@
-Console only
+## Console Game
+
 1. There should be an array containing the rock, paper and scissors
 
 2. There should be a place to store the user score, enemy score, and the number of rounds. There should be  default round if the user doesn't choose.
@@ -26,7 +27,8 @@ Console only
 
 ---
 
-HTML DOM
+## HTML DOM Game
+
 1. There should be a way to link the buttons with their respective array
  1. so the let rock-button = choices[0]
  2. paper-button = choices[1]
@@ -51,11 +53,30 @@ HTML DOM
 6. There should be the text "You win" or "You lose" or "A tie" that appears after the game is over
 7. The replay button should link to the replay array
 
+---
+
+### Button SVG
+
+1. Use input checkbox
+2. Default is unchecked: the image box is inside a container box with a shadow.
+3. When checked, set the choices[value]
+4. When checked and hover, no shadow and slow transition into background color for that choice.
+5. Return to uncheck state after each round. Make uncheck function. Outside of loop but in the function.
+  function uncheck() { document.getElementById("myChoice").checked=false;
+  }
+6. Add alt to the images.
 
 ---
-Button SVG
-1. Use input checked
- 1. When checked, set the choices[value]
- 2. Add ring pulse effect when hovered
- 3. Color darkens or whatever
- 4. Return to uncheck state after each round
+
+## Enemy Choice
+
+1. Default image is question mark inside a lighter colored container.
+2. The choice changes the background.
+ 
+---
+
+## Edit
+1. Get rid of the zero for the scores in the HTML
+2. Append the score use span.textContent = userScore.
+3. For the rounds, delete from html and use prompt instead. Get value from prompt.
+4. Display the currentRound with span. It should be let currentRound = i. Put this at the end of loop outside if statement.
