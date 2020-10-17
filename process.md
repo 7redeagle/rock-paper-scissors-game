@@ -1,4 +1,4 @@
-Console only
+Console Only Setup
 1. There should be an array containing the rock, paper and scissors
 2. There should be a place to store the user score, enemy score, and the number of rounds. There should be  default round if the user doesn't choose.
 3. There should be a function to display the scores and the rounds played
@@ -16,13 +16,14 @@ Console only
 
 
 
-HTML DOM
+HTML DOM Manipulation
 1. There should be a way to link the buttons with their respective array
   * so the let rock-button = choices[0]
   * paper-button = choices[1]
   * scissor-button = choices[2]
 2. There should be a way to input the number of rounds and link that value to the rounds variable
   * input type=number or text with so rounds.valueAsNumber
+  * if no value is inputted set the round = 3;
 3. There should be a way to change the score when either the user or the enemy wins
   * remove the 0 and add number 1 then increment
 4. When the buttons are clicked, the linked array item should trigger the userChoice function
