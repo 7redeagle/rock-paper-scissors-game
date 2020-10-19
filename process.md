@@ -19,7 +19,7 @@
   2. if the enemy wins then increment the enemyScore by one
   3. else the user wins then increment the userScore by one
   4. display the scores
-
+   
 9. After game ends, replay option: if yes, start the game over else end the game with a "Goodbye."
 
 10. Put this in an object called gameSetup
