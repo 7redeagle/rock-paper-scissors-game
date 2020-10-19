@@ -30,17 +30,23 @@
 
       <main class="main">
         <div class="game-scores">
-          <p class="game-scores__rounds">
-            Rounds:
-            <input type="number" id="roundsInput" />
+          <p class="game-scores__rounds">Rounds: 
+<input type="number" class="game-score__input-rounds">
           </p>
-          <p class="game-scores__user">User Score: 0</p>
-          <p class="game-scores__enemy">Enemy Score: 0</p>
+          <p class="game-scores__user">User Score:</p>
+          <p class="game-scores__enemy">Enemy Score:</p>
         </div>
-        <div class="choices">
-          <button class="choices__button choices__rock">Rock</button>
-          <button class="choices__button choices__paper">Paper</button>
-          <button class="choices__button choices__scissors">Scissors</button>
+
+        <div class="enemy-choices"></div>
+
+        <div class="user-choices">
+          <button class="user-choices__button user-choices__rock">Rock</button>
+          <button class="user-choices__button user-choices__paper">
+            Paper
+          </button>
+          <button class="user-choices__button user-choices__scissors">
+            Scissors
+          </button>
         </div>
         <div class="game-winner">
           <p class="game-winner__text"></p>

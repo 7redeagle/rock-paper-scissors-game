@@ -1,78 +1,91 @@
-// list the choices and default scores
 const choices = ["rock", "paper", "scissors"];
-let userScore = 0;
-let userSelect = 0;
-let enemyScore = 0;
-let enemySelect = 0;
-let rounds = 3;
+let userRock = document.querySelector(".user-choices__rock");
+let userPaper = document.querySelector(".user-choices__paper");
+let userScissors = document.querySelector(".user-choices__scissors");
+let inputRounds = document.querySelector(".game-score__input-rounds");
 
-// round selection
-function roundsPick(pickNum) {
-  rounds = Number(pickNum);
-  console.log(roundsPick);
-}
+userRock.addEventListener("click", function () {
+  gameSetup.userPick(0);
+});
+userPaper.addEventListener("click", function () {
+  gameSetup.userPick(1);
+});
+userScissors.addEventListener("click", function () {
+  gameSetup.userPick(2);
+});
 
-// generate enemy selection
-function enemyPick() {
-  enemySelect = choices[Math.floor(Math.random() * choices.length)];
-  console.log("enemy pick:", enemySelect);
-  return enemySelect;
-}
+// game setup
+let gameSetup = {
+  userScore: 0,
+  userSelect: 0,
+  enemyScore: 0,
+  enemySelect: 0,
+  rounds: 3,
+  displayScores: function () {
+    console.log(
+      `user score: ${this.userScore}, enemy score: ${this.enemyScore}`
+    );
+  },
+  pickRounds: function (pickNum) {
+    if (pickNum === undefined || pickNum === 0) {
+      this.rounds = 3;
+    } else {
+      this.rounds = Number(pickNum);
+    }
+    console.log(this.rounds);
+    return this.rounds;
+  },
+  userPick: function (pick) {
+    this.userSelect = choices[pick];
+    console.log("user pick:", this.userSelect);
+    return this.userSelect;
+  },
+  enemyPick: function () {
+    this.enemySelect = choices[Math.floor(Math.random() * choices.length)];
+    console.log("enemy pick:", this.enemySelect);
+    return this.enemySelect;
+  },
+  winner: function () {
+    if (this.userScore > this.enemyScore) {
+      console.log("You Win!");
+    } else if (this.userScore < this.enemyScore) {
+      console.log("You Lose!");
+    } else {
+      console.log(`It's a tie`);
+    }
+  },
+  replayGame: function (answer) {
+    if (answer == "yes" || answer == "y") {
+      game.playGame();
+    } else {
+      console.log("Goodbye!");
+    }
+  },
+};
 
-// user selection
-function userPick(pick) {
-  userSelect = choices[pick];
-  console.log("user pick:", userSelect);
-  return userSelect;
-}
+let userPick = document.createElement("p");
+userPick.textContent = `User Picked: ${gameSetup.userSelect}`;
 
-// display scores
-function displayScores() {
-  console.log(`user score: ${userScore}, enemy score: ${enemyScore}`);
-}
-
-// display who is the winner
-function winner() {
-  if (userScore > enemyScore) {
-    console.log("You Win!");
-  } else if (userScore < enemyScore) {
-    console.log("You Lose!");
-  } else {
-    console.log(`It's a tie`);
-  }
-}
-
-// play again?
-function replayGame(answer) {
-  if (answer == "yes") {
-    playGame();
-  } else {
-    console.log("Goodbye!");
-  }
-}
-
-// the actual game
-function playGame() {
-  roundsPick(prompt("How many rounds?"));
-  enemyScore = 0;
-  userScore = 0;
-
-  for (i = 0; i < Number(rounds); i++) {
-    userPick(prompt("0 for rock, 1 for paper, 2 for scissors"));
-    enemyPick();
-    if (enemySelect == userSelect) {
+// the game
+function playGame(rounds) {
+  gameSetup.pickRounds(rounds);
+  for (i = 0; i < Number(gameSetup.rounds); i++) {
+    gameSetup.userPick(prompt("0 for rock, 1 for paper, 2 for scissors"));
+    gameSetup.enemyPick();
+    if (gameSetup.enemySelect == gameSetup.userSelect) {
       console.log(`It's a tie`);
     } else if (
-      (enemySelect == "rock" && userSelect == "scissors") ||
-      (enemySelect == "scissors" && userSelect == "paper") ||
-      (enemySelect == "paper" && userSelect == "rock")
+      (gameSetup.enemySelect == "rock" && gameSetup.userSelect == "scissors") ||
+      (gameSetup.enemySelect == "scissors" &&
+        gameSetup.userSelect == "paper") ||
+      (gameSetup.enemySelect == "paper" && gameSetup.userSelect == "rock")
     ) {
-      enemyScore++;
+      gameSetup.enemyScore++;
     } else {
-      userScore++;
+      gameSetup.userScore++;
     }
-    displayScores();
+    gameSetup.displayScores();
   }
-  winner();
-  replayGame(prompt("play again?"));
+  gameSetup.winner();
+  gameSetup.replayGame(prompt("play again?"));
 }
