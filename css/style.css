@@ -146,6 +146,7 @@ body {
   font-size: 50px;
 }
 
+/* replay button */
 .replay__button {
   margin-bottom: 50px;
   padding: 15px;
@@ -184,6 +185,9 @@ a {
 
 /* mobile styles */
 @media (max-width: 600px) {
+  .user {
+    order: 1;
+  }
   .choice__icon {
     transform: scale(1.5);
   }
@@ -199,7 +203,7 @@ a {
 
   .game__enemy {
     border-right: none;
-    border: var(--border);
+    border-bottom: var(--border);
   }
   .game__results {
     margin: 10px;
