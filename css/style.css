@@ -21,25 +21,6 @@ body {
   color: var(--neutral-color);
 }
 
-.rock {
-  visibility: hidden;
-  fill: var(--enemy-red);
-}
-
-.paper {
-  visibility: hidden;
-  fill: var(--enemy-blue);
-}
-
-.scissors {
-  visibility: hidden;
-  fill: var(--enemy-yellow);
-}
-
-.question {
-  visibility: visible;
-}
-
 /* header */
 .header {
   text-align: center;
@@ -76,7 +57,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   border: var(--border);
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .choice__button {
@@ -155,6 +136,26 @@ body {
   line-height: 1.6;
 }
 
+/* enemy icons */
+.rock {
+  visibility: hidden;
+  fill: var(--enemy-red);
+}
+
+.paper {
+  visibility: hidden;
+  fill: var(--enemy-blue);
+}
+
+.scissors {
+  visibility: hidden;
+  fill: var(--enemy-yellow);
+}
+
+.question {
+  visibility: visible;
+}
+
 /* game end */
 .opacity {
   opacity: 0.5;
@@ -208,9 +209,6 @@ a {
 
 /* mobile styles */
 @media (max-width: 600px) {
-  .user {
-    order: 1;
-  }
   .choice__icon {
     transform: scale(1.5);
   }
