@@ -4,62 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
   </head>
   <body>
     <header class="header">
       <h1 class="header__title">
-        <span class="header__item color--red">Rock</span>
-        <span class="header__item color--purple">Paper</span>
-        <span class="header__item color--green">Scissors</span>
+        <span class="color--red">ROCK</span>
+        <span class="color--blue">PAPER</span>
+        <span class="color--green">SCISSORS</span>
       </h1>
-
-      <p class="header__rules">
-        <span class="header__item color--red">Rock</span> beats
-        <span class="header__item color--green">Scissors</span> |
-        <span class="header__item color--green">Scissors</span> beats
-        <span class="header__item color--purple">Paper</span> |
-        <span class="header__item color--purple">Paper</span> beats
-        <span class="header__item color--red">Rock</span>
-      </p>
-
-      <main class="main">
-        <div class="game-scores">
-          <p class="game-scores__rounds">Rounds: 
-<input type="number" class="game-score__input-rounds">
-          </p>
-          <p class="game-scores__user">User Score:</p>
-          <p class="game-scores__enemy">Enemy Score:</p>
-        </div>
-
-        <div class="enemy-choices"></div>
-
-        <div class="user-choices">
-          <button class="user-choices__button user-choices__rock">Rock</button>
-          <button class="user-choices__button user-choices__paper">
-            Paper
-          </button>
-          <button class="user-choices__button user-choices__scissors">
-            Scissors
-          </button>
-        </div>
-        <div class="game-winner">
-          <p class="game-winner__text"></p>
-          <button class="game-winner__replay">Replay?</button>
-        </div>
-      </main>
+      <p class="header__caption">3 Choices | 3 Lives | 1 Winner</p>
     </header>
+    <main class="main">
+      <section class="user">
+        <button class="button-rock">
+          <div class="button-rock__icon"></div>
+        </button>
+        <button class="button-paper">
+          <div class="button-paper__icon"></div>
+        </button>
+        <button class="button-rock">
+          <div class="button-paper__icon"></div>
+        </button>
+      </section>
+      <section class="game">
+        <div class="game__enemy">
+          <p class="game__enemy-choice">Enemy's Choice</p>
+          <div class="game__enemy-default"></div>
+        </div>
+        <div class="game__results">
+          <p class="game__round">Round: 0</p>
+          <p class="game__lives">Your Lives: 3 | Enemy Lives: 3</p>
+          <p class="game__text">Pick a Choice to Begin!</p>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
       <p class="footer__copyright">
-        @Made by tiger-fish. Icons from
-        <a href="https://fontawesome.com/">Font Awesome</a>.
+        @Made by tiger-fish | Icons from
+        <a href="https://iconmonstr.com/">iconmonstr</a>.
       </p>
     </footer>
-    <script src="main.js"></script>
   </body>
 </html>
