@@ -86,20 +86,21 @@ body {
 }
 
 .icon__rock:hover {
-  fill: var(--color-red) !important;
+  fill: var(--color-red);
 }
 
 .icon__paper:hover {
-  fill: var(--color-blue) !important;
+  fill: var(--color-blue);
 }
 
 .icon__scissors:hover {
-  fill: var(--color-yellow) !important;
+  fill: var(--color-yellow);
 }
 
 .button--disabled .choice__icon {
   cursor: default;
-  transform: none;
+  transform: scale(1);
+  pointer-events: none;
 }
 
 /* game area */

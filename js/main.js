@@ -83,7 +83,7 @@ endGame = (userHealth, enemyHealth) => {
   const gameEndText = document.querySelector(".game-end__text");
   if (enemyLives === 0) {
     gameText.innerText =
-      "Splendid! You have proven your superiority over a machine.";
+      "Splendid! You have proven your superiority over the machine.";
     gameEndText.innerText = "You won!";
     gameEndText.style.color = "#28df99";
     replayButton.style.visibility = "visible";
