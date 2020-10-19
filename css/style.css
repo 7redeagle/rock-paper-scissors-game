@@ -128,7 +128,7 @@ body {
   width: 24px;
   height: 24px;
   transform: scale(3);
-  margin: auto;
+  margin: 3em auto 0px auto;
 }
 
 .game__results {
