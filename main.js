@@ -51,9 +51,10 @@ enemyChoice = () => {
 
 // count the # of lives left in player and
 countLives = (userPick, enemyPick) => {
+  debugger;
   const gameResults = document.querySelector(".game__results");
   if (userPick === enemyPick) {
-    gameText.innerText = `It's a tie! So everyone gets to live a little longer. Again!`;
+    gameText.innerText = `Two ${userPick} It's a tie! So everyone gets to live a little longer. Again!`;
   } else if (
     (enemyPick === "Rock" && userPick === "Scissors") ||
     (enemyPick === "Scissors" && userPick === "Paper") ||
@@ -75,22 +76,23 @@ endGame = (userHealth, enemyHealth) => {
   if (userHealth === 0 || enemyHealth === 0) {
     choiceButton.forEach((button) => {
       button.setAttribute("disabled", "");
-      button.classList.add("button--disabled", "opacity");
+      button.classList.add("button--disabled");
     });
   }
 
   const gameEndText = document.querySelector(".game-end__text");
-  if (userLives > enemyLives) {
+  if (enemyLives === 0) {
     gameText.innerText =
       "Splendid! You have proven your superiority over a machine.";
     gameEndText.innerText = "You won!";
     gameEndText.style.color = "#28df99";
-  } else {
+    replayButton.style.visibility = "visible";
+  } else if (userLives === 0) {
     gameText.innerText = "Well...time to serve your machine overlord.";
     gameEndText.innerText = "You lost! Try again.";
     gameEndText.style.color = "#ec0101";
+    replayButton.style.visibility = "visible";
   }
-  replayButton.style.visibility = "visible";
 };
 
 // replay game click reloads window
@@ -107,19 +109,10 @@ playGame = () => {
     choice.addEventListener("click", () => {
       const choiceIcon = document.querySelectorAll(".choice__icon");
       if (choice.classList.contains("choice__rock")) {
-        choiceIcon[0].style.color = "red";
-        choiceIcon[1].style.color = "grey";
-        choiceIcon[2].style.color = "grey";
         userPick = "Rock";
       } else if (choice.classList.contains("choice__paper")) {
-        choiceIcon[1].style.color = "blue";
-        choiceIcon[0].style.color = "grey";
-        choiceIcon[2].style.color = "grey";
         userPick = "Paper";
       } else {
-        choiceIcon[2].style.color = "green";
-        choiceIcon[0].style.color = "grey";
-        choiceIcon[1].style.color = "grey";
         userPick = "Scissors";
       }
       countRounds();
