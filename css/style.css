@@ -31,76 +31,13 @@ body {
   letter-spacing: 2px;
 }
 
-.color--red {
-  color: var(--color-red);
-}
-
-.color--blue {
-  color: var(--color-blue);
-}
-
-.color--yellow {
-  color: var(--color-yellow);
-}
-
-/* main area */
+/* main container */
 .main {
   display: flex;
   flex-direction: column;
   width: 80vw;
   max-width: 700px;
   margin: 30px auto;
-}
-
-/* user choices */
-.user {
-  display: flex;
-  justify-content: space-evenly;
-  border: var(--border);
-  margin-top: 20px;
-}
-
-.choice__button {
-  background-color: transparent;
-  border: none;
-}
-
-.choice__button:focus,
-.replay__button:focus {
-  outline: none;
-}
-
-/* icons */
-.choice__icon {
-  margin: 3em 1em;
-  fill: var(--neutral-color);
-  width: 24px;
-  height: 24px;
-  transform: scale(3);
-  transition: all 0.2s ease-in-out;
-}
-
-.choice__icon:hover {
-  transform: scale(4);
-  cursor: pointer;
-}
-
-.icon__rock:hover {
-  fill: var(--color-red);
-}
-
-.icon__paper:hover {
-  fill: var(--color-blue);
-}
-
-.icon__scissors:hover {
-  fill: var(--color-yellow);
-}
-
-.button--disabled .choice__icon {
-  cursor: default;
-  transform: scale(1);
-  pointer-events: none;
 }
 
 /* game area */
@@ -157,11 +94,58 @@ body {
   visibility: visible;
 }
 
-/* game end */
-.opacity {
-  opacity: 0.5;
+/* user choices */
+.user {
+  display: flex;
+  justify-content: space-evenly;
+  border: var(--border);
+  margin-top: 20px;
 }
 
+.choice__button {
+  background-color: transparent;
+  border: none;
+}
+
+.choice__button:focus,
+.replay__button:focus {
+  outline: none;
+}
+
+/* icons */
+.choice__icon {
+  margin: 3em 1em;
+  fill: var(--neutral-color);
+  width: 24px;
+  height: 24px;
+  transform: scale(3);
+  transition: all 0.2s ease-in-out;
+}
+
+.choice__icon:hover {
+  transform: scale(4);
+  cursor: pointer;
+}
+
+.icon__rock:hover {
+  fill: var(--color-red);
+}
+
+.icon__paper:hover {
+  fill: var(--color-blue);
+}
+
+.icon__scissors:hover {
+  fill: var(--color-yellow);
+}
+
+.button--disabled .choice__icon {
+  cursor: default;
+  transform: scale(1);
+  pointer-events: none;
+}
+
+/* game end */
 .game-end {
   text-align: center;
 }
