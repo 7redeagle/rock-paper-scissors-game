@@ -1,4 +1,5 @@
 // global variables
+const choices = ["Rock", "Paper", "Scissors"];
 const choiceButton = document.querySelectorAll(".choice__button");
 const rounds = document.querySelector(".game__round");
 const gameText = document.querySelector(".game__text");
@@ -17,7 +18,6 @@ countRounds = () => {
 
 // function for enemy choice: get random choice, change question to hidden, and set visible for the chosen choice
 enemyChoice = () => {
-  const choices = ["Rock", "Paper", "Scissors"];
   const enemyPick = choices[Math.floor(Math.random() * choices.length)];
   const enemyIcon = document.querySelector(".game__enemy-icon");
 
@@ -51,7 +51,6 @@ enemyChoice = () => {
 
 // count the # of lives left in player and
 countLives = (userPick, enemyPick) => {
-  debugger;
   const gameResults = document.querySelector(".game__results");
   if (userPick === enemyPick) {
     gameText.innerText = `Two ${userPick} It's a tie! So everyone gets to live a little longer. Again!`;
@@ -60,7 +59,7 @@ countLives = (userPick, enemyPick) => {
     (enemyPick === "Scissors" && userPick === "Paper") ||
     (enemyPick === "Paper" && userPick === "Rock")
   ) {
-    gameText.innerText = `You lost this round! ${enemyPick} beats ${userPick}. Try again!`;
+    gameText.innerText = `You lost this round! ${enemyPick} beats ${userPick}. Better luck next time.`;
     userLives -= 1;
   } else {
     gameText.innerText = `Good job! Your ${userPick} crushed the machines's ${enemyPick}. Keep it up!`;
@@ -84,7 +83,7 @@ endGame = (userHealth, enemyHealth) => {
   if (enemyLives === 0) {
     gameText.innerText =
       "Splendid! You have proven your superiority over the machine.";
-    gameEndText.innerText = "You won!";
+    gameEndText.innerText = "You win!";
     gameEndText.style.color = "#28df99";
     replayButton.style.visibility = "visible";
   } else if (userLives === 0) {

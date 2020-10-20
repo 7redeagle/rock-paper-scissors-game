@@ -31,6 +31,18 @@ body {
   letter-spacing: 2px;
 }
 
+.color--red {
+  color: var(--color-red);
+}
+
+.color--blue {
+  color: var(--color-blue);
+}
+
+.color--yellow {
+  color: var(--color-yellow);
+}
+
 /* main container */
 .main {
   display: flex;
@@ -190,6 +202,10 @@ body {
 a {
   color: var(--color-blue);
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* mobile styles */
