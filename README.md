@@ -6,6 +6,6 @@ is the full game on a website. Give it try!
 
 Version 1 of the game :
 
-![Version 1](demo/ver.1.jpg)
+!(demo/ver.1-game.png)
 
 
