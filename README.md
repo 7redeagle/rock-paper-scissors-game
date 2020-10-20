@@ -1,7 +1,7 @@
 # a simple rock paper scissors game
 
 First project using javasript. Two versions, version 1 is purely console. Version 2 is a simple interface of the game. And 
-version 3 is the prettier version. Give it try!
+version 3 is the prettier version. ![Give it try!](https://tiger-fish.github.io/rock-paper-scissors-game/)
 
 ---
 
