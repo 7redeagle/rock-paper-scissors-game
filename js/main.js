@@ -83,12 +83,12 @@ endGame = (userHealth, enemyHealth) => {
   if (enemyLives === 0) {
     gameText.innerText =
       "Splendid! You have proven your superiority over the machine.";
-    gameEndText.innerText = "You win!";
+    gameEndText.innerText = "You win! 😃";
     gameEndText.style.color = "#28df99";
     replayButton.style.visibility = "visible";
   } else if (userLives === 0) {
     gameText.innerText = "Well...time to serve your machine overlord.";
-    gameEndText.innerText = "You lost! Try again.";
+    gameEndText.innerText = "You lost! 🤖 Try again.";
     gameEndText.style.color = "#ec0101";
     replayButton.style.visibility = "visible";
   }
