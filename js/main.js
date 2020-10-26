@@ -9,14 +9,14 @@ let userLives = 3;
 let enemyLives = 3;
 let round = 0;
 
-// count the number of rounds
+// increment round by one after each choice
 countRounds = () => {
   round += 1;
   rounds.innerText = `Round: ${round}`;
   return round;
 };
 
-// function for enemy choice: get random choice, change question to hidden, and set visible for the chosen choice
+// enemy choice: get random choice, set question icon to hidden, and set visible for the chosen choice
 enemyChoice = () => {
   const enemyPick = choices[Math.floor(Math.random() * choices.length)];
   const enemyIcon = document.querySelector(".game__enemy-icon");
@@ -49,7 +49,7 @@ enemyChoice = () => {
   return enemyPick;
 };
 
-// count the # of lives left in player and
+// decrement user or enemy lives based on losing choice
 countLives = (userPick, enemyPick) => {
   const gameResults = document.querySelector(".game__results");
   if (userPick === enemyPick) {
@@ -70,7 +70,7 @@ countLives = (userPick, enemyPick) => {
   return [userLives, enemyLives];
 };
 
-// when either userLives or enemyLives are 0, end game
+// when either userLives or enemyLives are 0, disable the buttons, create game text, and set replay button to visible
 endGame = (userHealth, enemyHealth) => {
   if (userHealth === 0 || enemyHealth === 0) {
     choiceButton.forEach((button) => {
@@ -94,14 +94,14 @@ endGame = (userHealth, enemyHealth) => {
   }
 };
 
-// replay game click reloads window
+// replay button: click reloads window
 replayGame = () => {
   replayButton.onclick = () => {
     window.location.reload();
   };
 };
 
-// play the game
+// play game
 playGame = () => {
   let userPick;
   choiceButton.forEach((choice) => {
