@@ -1,16 +1,7 @@
 @import "./normalize.css";
+@import "./variables.css";
 
 /* global */
-:root {
-  --neutral-color: #5e5e5e;
-  --color-red: #fc3f4c;
-  --color-blue: #26b1fc;
-  --color-yellow: #fcf06d;
-  --enemy-red: #f35588;
-  --enemy-blue: #05dfd7;
-  --enemy-yellow: #fff591;
-  --border: 4px solid #545454;
-}
 
 body {
   margin: 0;
