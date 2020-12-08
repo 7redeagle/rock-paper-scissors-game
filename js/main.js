@@ -101,6 +101,13 @@ replayGame = () => {
   };
 };
 
+// auto scroll to bottom when game ends 
+scrollAuto = () => {
+  if (userLives === 0 || enemyLives === 0) {
+    window.scrollTo(0, document.body.scrollHeight) 
+  };
+};
+
 // play game
 playGame = () => {
   let userPick;
@@ -118,6 +125,7 @@ playGame = () => {
       countLives(userPick, enemyChoice());
       endGame(userLives, enemyLives);
       replayGame();
+      scrollAuto();
     });
   });
 };
