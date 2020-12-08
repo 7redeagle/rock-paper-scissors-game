@@ -41,7 +41,19 @@ body {
   height: 100vh;
   font-family: var(--primary-font);
   color: var(--neutral-color);
-  font-size: 20px;
+  font-size: 14px;
+}
+
+@media (min-width: 900px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  body {
+    font-size: 18px;
+  }
 }
 
 /* =============================================
@@ -248,6 +260,7 @@ a:hover {
     border-right: none;
     border-bottom: var(--border);
   }
+
   .game__results {
     margin: 10px;
     padding: 20px;
