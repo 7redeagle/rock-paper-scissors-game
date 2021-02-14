@@ -1,7 +1,7 @@
 # a simple rock paper scissors game
 
 First project using javascript. Three versions, version 1 is purely console. Version 2 is a simple interface of the game. And 
-version 3 is the prettier version. [Give it try!](https://7redeagle.github.io/monster-in-the-dark/)
+version 3 is the prettier version. [Give it try!](https://7redeagle.github.io/rock-paper-scissors-game/)
 
 ---
 
